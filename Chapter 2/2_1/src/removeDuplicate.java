@@ -5,7 +5,7 @@ public class removeDuplicate {
 	
 	public static void remove1(LinkedListNode n) {
 		
-		Hashtable table = new Hashtable();
+		Hashtable<Integer, Boolean> table = new Hashtable<Integer,Boolean>();
 		
 		LinkedListNode previous = null;
 		 
@@ -20,6 +20,7 @@ public class removeDuplicate {
 				n = n.next;
 		 }
 	}
+	//O(n) time
 	
 	public static void remove2(LinkedListNode n) {
 		
@@ -36,28 +37,10 @@ public class removeDuplicate {
 					tmp=tmp.next;
 				}
 			}
-				n = n.next;
+			n = n.next;
 		 }
 	}
+	//O(n^2) time O(1)space
 	
 	
-}
-class LinkedListNode{
-	int data;
-	LinkedListNode next;
-	
-	public LinkedListNode(int n){
-		this.data = n;
-		this.next = null;
-	}
-	void print(){
-		String s = "";
-		LinkedListNode n = this;
-		while(n != null){
-			s += String.valueOf(n.data) + "->";
-			n = n.next;
-		}
-		s += "None";
-		System.out.println(s);
-	}
 }
